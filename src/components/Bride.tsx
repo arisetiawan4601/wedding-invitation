@@ -49,7 +49,7 @@ function Bride() {
                 THE FIRST DAUGHTER OF
               </p>
               <p className="text-[0.75rem] font-medium">
-                Mr. Slamet Mulyono & Mrs. Astutik
+                Mr. Slamet Mulyono & Mrs. Sri Astutik
               </p>
             </motion.div>
             <motion.div

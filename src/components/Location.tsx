@@ -37,7 +37,7 @@ function Location() {
                 }}
                 className="font-light text-sm"
               >
-                07:00
+                06:30
               </p>
             </div>
             <p
