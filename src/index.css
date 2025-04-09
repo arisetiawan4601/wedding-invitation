@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Roboto", sans-serif;
+  background-color: black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Width */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
