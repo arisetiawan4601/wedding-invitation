@@ -22,16 +22,23 @@ function Location() {
             >
               AKAD
             </p>
-            <div className="flex">
+            <div>
               <p
                 style={{
                   fontFamily: "'Forum', system-ui",
                 }}
                 className="mr-2"
               >
-                Saturday, April 19 2025,
+                Saturday, April 19 2025
               </p>
-              <p className="font-light">07:00</p>
+              <p
+                style={{
+                  fontFamily: "'Forum', system-ui",
+                }}
+                className="font-light text-sm"
+              >
+                07:00
+              </p>
             </div>
             <p
               style={{
@@ -41,16 +48,23 @@ function Location() {
             >
               RECEPTION
             </p>
-            <div className="flex">
+            <div>
               <p
                 style={{
                   fontFamily: "'Forum', system-ui",
                 }}
                 className="mr-2"
               >
-                Saturday, April 19 2025,
+                Saturday, April 19 2025
               </p>
-              <p className="font-light">15:00 - 22:00</p>
+              <p
+                style={{
+                  fontFamily: "'Forum', system-ui",
+                }}
+                className="font-light text-sm"
+              >
+                15:00 - 22:00
+              </p>
             </div>
             <p
               style={{
