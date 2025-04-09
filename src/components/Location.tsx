@@ -29,7 +29,7 @@ function Location() {
                 }}
                 className="mr-2"
               >
-                SATURDAY,
+                Saturday, April 19 2025,
               </p>
               <p className="font-light">07:00</p>
             </div>
@@ -48,7 +48,7 @@ function Location() {
                 }}
                 className="mr-2"
               >
-                SATURDAY,
+                Saturday, April 19 2025,
               </p>
               <p className="font-light">15:00 - 22:00</p>
             </div>
