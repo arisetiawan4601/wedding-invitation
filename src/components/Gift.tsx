@@ -117,7 +117,7 @@ function Gift() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    let validationErrors = { nama: "", saldo: "", bank: "" };
+    const validationErrors = { nama: "", saldo: "", bank: "" };
 
     // Validation
     if (!form.nama) {
