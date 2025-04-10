@@ -91,7 +91,7 @@ function Wishes() {
   }
 
   return (
-    <Section className="bg-[url('assets/x_photo_2.jpg')] bg-cover bg-center text-white">
+    <Section className="bg-[url('assets/photo_6.jpg')] bg-cover bg-center text-white">
       <ShadowWrapper>
         <div className="flex flex-col px-6 py-12 h-full">
           <motion.div
