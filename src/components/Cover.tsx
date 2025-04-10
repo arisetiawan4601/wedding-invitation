@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Button from "./Button";
+import { useEffect, useState } from "react";
 
 type CoverProps = {
   open: boolean;
@@ -7,7 +8,17 @@ type CoverProps = {
 };
 
 function Cover({ open, onOpen }: CoverProps) {
-  // let guestName = "Galih Sukma Adjie";
+  const [guestName, setGuestName] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+
+    const name = params.get("guest");
+    if (name) {
+      setGuestName(decodeURIComponent(name));
+    }
+  }, []);
+
   return (
     <div
       className={clsx([
@@ -25,7 +36,7 @@ function Cover({ open, onOpen }: CoverProps) {
             }}
             className="font-light"
           >
-            Undangan Pernikahan
+            Wedding Invitation
           </h1>
           <p
             style={{
@@ -35,33 +46,45 @@ function Cover({ open, onOpen }: CoverProps) {
           >
             ARI & ULFIA
           </p>
-          {/* <p
+          {guestName && (
+            <div>
+              <p
+                style={{
+                  fontFamily: "'Forum', system-ui",
+                }}
+                className="font-light text-center text-sm"
+              >
+                Warmly invite:
+              </p>
+              <p
+                style={{
+                  fontFamily: "'Forum', system-ui",
+                }}
+                className="font-medium text-2xl my-2"
+              >
+                {guestName}
+              </p>
+              <p
+                style={{
+                  fontFamily: "'Forum', system-ui",
+                }}
+                className="font-light text-center text-sm"
+              >
+                To our wedding on
+              </p>
+            </div>
+          )}
+          <p
             style={{
               fontFamily: "'Forum', system-ui",
             }}
             className="font-light"
           >
-            Kepada
-          </p>
-          <p
-            style={{
-              fontFamily: "'Forum', system-ui",
-            }}
-            className="font-medium text-3xl my-2"
-          >
-            {guestName}
-          </p> */}
-          <p
-            style={{
-              fontFamily: "'Forum', system-ui",
-            }}
-            className="font-light"
-          >
-            Sabtu, 19 April 2025
+            Saturday, April 19 2025
           </p>
         </div>
-        <Button onClick={() => onOpen()} className="mt-8">
-          Buka Undangan
+        <Button onClick={() => onOpen()} className="mt-8 px-10 text-sm">
+          OPEN
         </Button>
       </div>
     </div>
