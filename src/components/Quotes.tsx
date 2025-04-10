@@ -13,9 +13,9 @@ function Quotes() {
               whileInView={{ opacity: 1, transition: { delay: 0.3 } }}
               className="mb-4"
             >
-              <div className="flex justify-between">
-                <div className="w-[10rem] h-[12rem] bg-[url('assets/photo_10.jpg')] bg-cover bg-center border-1 border-white/20"></div>
-                <div className="w-[10rem] h-[12rem] bg-[url('assets/photo_11.jpg')] bg-cover bg-center border-1 border-white/20"></div>
+              <div className="flex justify-center">
+                <div className="mr-4 w-[9rem] h-[10rem] bg-[url('assets/photo_10.jpg')] bg-cover bg-center border-1 border-white/20"></div>
+                <div className="w-[9rem] h-[10rem] bg-[url('assets/photo_11.jpg')] bg-cover bg-center border-1 border-white/20"></div>
               </div>
             </motion.div>
 
@@ -23,7 +23,7 @@ function Quotes() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, transition: { delay: 0.45 } }}
             >
-              <p className="text-sm font-light text-white/90 italic">
+              <p className="text-sm font-light text-white/90 italic text-center">
                 “I ask Allah to make me better for you, and you better for me,
                 and us better together for Him.”
               </p>
@@ -37,7 +37,7 @@ function Quotes() {
                 style={{
                   fontFamily: "'Forum', system-ui",
                 }}
-                className="text-end text-sm mt-4"
+                className="text-center text-sm mt-4"
               >
                 - ARI & ULFIA -
               </p>

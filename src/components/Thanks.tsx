@@ -42,7 +42,7 @@ function Thanks() {
                 style={{
                   fontFamily: "'Forum', system-ui",
                 }}
-                className="text-end text-sm mt-4"
+                className="text-center text-sm mt-4"
               >
                 - ARI & ULFIA -
               </p>
