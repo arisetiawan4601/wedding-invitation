@@ -25,6 +25,7 @@ function Wishes() {
   });
   const [formError, setFormError] = useState("");
   const [confirmed, setConfirmed] = useState(false);
+  const [confirming, setConfirming] = useState(false);
 
   useEffect(() => {
     getWishes();
@@ -49,43 +50,44 @@ function Wishes() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!confirming && !confirmed) {
+      const validationErrors = { name: "", wish: "", attendance: "" };
 
-    const validationErrors = { name: "", wish: "", attendance: "" };
+      // Validation
+      if (!form.name) {
+        validationErrors.name = "Please fill with your name";
+      }
+      if (!form.wish) {
+        validationErrors.wish = "Please fill your wish for us";
+      }
+      if (!form.attendance) {
+        validationErrors.attendance = "Please confirm your attendance";
+      }
 
-    // Validation
-    if (!form.name) {
-      validationErrors.name = "Please fill with your name";
+      if (
+        validationErrors.name ||
+        validationErrors.wish ||
+        validationErrors.attendance
+      ) {
+        setErrors(validationErrors);
+        return;
+      }
+
+      setConfirming(true);
+      const { error } = await supabase.from("wishes").insert({
+        name: form.name,
+        wish: form.wish,
+        attendance: form.attendance == "YES",
+      });
+      setConfirming(false);
+      if (error) {
+        setFormError("Something went wrong");
+      } else {
+        setFormError("");
+        setConfirmed(true);
+      }
+      getWishes();
     }
-    if (!form.wish) {
-      validationErrors.wish = "Please fill your wish for us";
-    }
-    if (!form.attendance) {
-      validationErrors.attendance = "Please confirm your attendance";
-    }
-
-    if (
-      validationErrors.name ||
-      validationErrors.wish ||
-      validationErrors.attendance
-    ) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    const { error } = await supabase.from("wishes").insert({
-      name: form.name,
-      wish: form.wish,
-      attendance: form.attendance == "YES",
-    });
-
-    if (error) {
-      setFormError("Something went wrong");
-    } else {
-      setFormError("");
-      setConfirmed(true);
-    }
-
-    getWishes();
   }
 
   return (
@@ -188,9 +190,16 @@ function Wishes() {
                     "bg-white text-black/40 hover:bg-white! cursor-auto!":
                       confirmed,
                   },
+                  {
+                    "text-white/60": confirming,
+                  },
                 ])}
               >
-                {confirmed ? "CONFIRMED" : "CONFIRM"}
+                {confirming
+                  ? "CONFIRMING ..."
+                  : confirmed
+                  ? "CONFIRMED"
+                  : "CONFIRM"}
               </Button>
               {formError && (
                 <p className="text-red-400 mt-4 text-sm">{formError}</p>
