@@ -121,7 +121,7 @@ function Gift() {
 
     // Validation
     if (!form.nama) {
-      validationErrors.nama = "Please fill with yourname";
+      validationErrors.nama = "Please fill with your name";
     }
     if (!form.saldo || Number(form.saldo) <= 0) {
       validationErrors.saldo = "Please fill the gift nominal";
@@ -160,7 +160,7 @@ function Gift() {
   };
 
   return (
-    <Section className="bg-[url('assets/photo_6.jpg')] bg-cover bg-center text-white">
+    <Section className="bg-[url('assets/photo_7.jpg')] bg-cover bg-center text-white">
       <ShadowWrapper>
         <div className="flex flex-col p-10 h-full">
           <motion.div
@@ -245,12 +245,12 @@ function Gift() {
                 type="text"
                 id="nama"
                 name="nama"
-                className="outline-none border-white border-b-1 w-full p-3"
+                className="outline-none border-white border-b-1 w-full py-3"
                 value={form.nama}
                 onChange={handleChange}
               />
               {errors.nama && (
-                <p className="text-red-400 mt-2">{errors.nama}</p>
+                <p className="text-red-400 mt-4 text-sm">{errors.nama}</p>
               )}
             </div>
 
@@ -261,12 +261,12 @@ function Gift() {
                 type="number"
                 id="saldo"
                 name="saldo"
-                className="outline-none border-white border-b-1 w-full p-3 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                className="outline-none border-white border-b-1 w-full py-3 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 value={form.saldo}
                 onChange={handleChange}
               />
               {errors.saldo && (
-                <p className="text-red-400 mt-2">{errors.saldo}</p>
+                <p className="text-red-400 mt-4 text-sm">{errors.saldo}</p>
               )}
             </div>
 
@@ -276,7 +276,7 @@ function Gift() {
                 name="bank"
                 value={form.bank}
                 onChange={handleChange}
-                className="outline-none border-white border-b-1 w-full p-3 appearance-none"
+                className="outline-none border-white border-b-1 w-full py-3 appearance-none"
               >
                 <option value="">Transfer Via</option>
                 <option value="BCA">BCA</option>
@@ -288,7 +288,7 @@ function Gift() {
                 <option value="Dana">Dana</option>
               </select>
               {errors.bank && (
-                <p className="text-red-400 mt-2">{errors.bank}</p>
+                <p className="text-red-400 mt-4 text-sm">{errors.bank}</p>
               )}
             </div>
 

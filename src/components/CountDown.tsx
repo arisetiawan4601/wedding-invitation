@@ -49,7 +49,7 @@ function CountDown() {
               >
                 SAVE THE DATE
               </p>
-              <p className="font-light text-sm">D-DAY COUNTDOWN</p>
+              <p className="font-light text-sm text-center">D-DAY COUNTDOWN</p>
             </motion.div>
 
             <motion.div

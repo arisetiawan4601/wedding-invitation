@@ -6,7 +6,7 @@ function Button({ children, className, ...props }: ButtonProps) {
   return (
     <button
       className={clsx(
-        "px-4 py-2 cursor-pointer border-1 border-white w-fit flex items-center",
+        "px-4 py-2 cursor-pointer border-1 border-white w-fit flex items-center hover:bg-white/20",
         className
       )}
       {...props}

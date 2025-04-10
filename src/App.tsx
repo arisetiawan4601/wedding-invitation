@@ -12,6 +12,7 @@ import Thanks from "./components/Thanks";
 import { Volume2 } from "lucide-react";
 import { VolumeOff } from "lucide-react";
 import BgMusic from "./assets/bg_music.mp3";
+import Wishes from "./components/Wishes";
 
 function useAudio(url: string) {
   const [audio] = useState(new Audio(url));
@@ -77,6 +78,7 @@ function App() {
           <Groom />
           <CountDown />
           <Location />
+          <Wishes />
           <Gift />
           <Thanks />
         </ScrollContainer>

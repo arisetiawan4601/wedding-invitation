@@ -4,7 +4,7 @@ import ShadowWrapper from "./ShadowWrapper";
 
 function Thanks() {
   return (
-    <Section className="bg-[url('assets/photo_7.jpg')] bg-cover bg-center text-white">
+    <Section className="bg-[url('assets/photo_8.jpg')] bg-cover bg-center text-white">
       <ShadowWrapper>
         <div className="flex flex-col p-5 h-full">
           <div className="p-5">
