@@ -58,9 +58,12 @@ function Welcome() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, transition: { delay: 0.6 } }}
             >
+              <p className="text-[0.75rem] font-medium italic">
+                “And of everything We created a pair, that you may remember (the
+                grace of Allah).”
+              </p>
               <p className="text-[0.75rem] font-medium">
-                "And of all things We created two mates ; perhaps you will
-                remember." ~ Q.S Az-Zariyat: 49"
+                Surah Adh-Dhariyat (51:49)
               </p>
             </motion.div>
           </div>

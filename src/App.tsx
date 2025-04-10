@@ -13,6 +13,7 @@ import { Volume2 } from "lucide-react";
 import { VolumeOff } from "lucide-react";
 import BgMusic from "./assets/bg_music.mp3";
 import Wishes from "./components/Wishes";
+import Quotes from "./components/Quotes";
 
 function useAudio(url: string) {
   const [audio] = useState(new Audio(url));
@@ -80,6 +81,7 @@ function App() {
           <Location />
           <Wishes />
           <Gift />
+          <Quotes />
           <Thanks />
         </ScrollContainer>
       </div>

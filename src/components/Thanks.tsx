@@ -4,7 +4,7 @@ import ShadowWrapper from "./ShadowWrapper";
 
 function Thanks() {
   return (
-    <Section className="bg-[url('assets/photo_8.jpg')] bg-cover bg-center text-white">
+    <Section className="bg-[url('assets/photo_9.jpg')] bg-cover bg-center text-white">
       <ShadowWrapper>
         <div className="flex flex-col p-5 h-full">
           <div className="p-5">
@@ -24,7 +24,7 @@ function Thanks() {
 
             <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { delay: 0.4 } }}
+              whileInView={{ opacity: 1, transition: { delay: 0.45 } }}
             >
               <p className="text-sm font-light">
                 It would be our deepest joy and highest honor to be graced with
@@ -36,13 +36,13 @@ function Thanks() {
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { delay: 0.5 } }}
+              whileInView={{ opacity: 1, transition: { delay: 0.6 } }}
             >
               <p
                 style={{
                   fontFamily: "'Forum', system-ui",
                 }}
-                className="text-center text-sm mt-4"
+                className="text-end text-sm mt-4"
               >
                 - ARI & ULFIA -
               </p>
