@@ -42,7 +42,7 @@ function Cover({ open, onOpen }: CoverProps) {
             style={{
               fontFamily: "'Forum', system-ui",
             }}
-            className="text-5xl my-2"
+            className="text-5xl mt-4"
           >
             ARI & ULFIA
           </p>
@@ -60,30 +60,14 @@ function Cover({ open, onOpen }: CoverProps) {
                 style={{
                   fontFamily: "'Forum', system-ui",
                 }}
-                className="font-medium text-2xl my-2"
+                className="text-center font-medium text-2xl mt-2"
               >
                 {guestName}
               </p>
-              <p
-                style={{
-                  fontFamily: "'Forum', system-ui",
-                }}
-                className="font-light text-center text-sm"
-              >
-                To our wedding on
-              </p>
             </div>
           )}
-          <p
-            style={{
-              fontFamily: "'Forum', system-ui",
-            }}
-            className="font-light"
-          >
-            Saturday, April 19 2025
-          </p>
         </div>
-        <Button onClick={() => onOpen()} className="mt-8 px-10 text-sm">
+        <Button onClick={() => onOpen()} className="mt-4 px-10 text-sm">
           OPEN
         </Button>
       </div>
