@@ -4,15 +4,15 @@ import Section from "./Section";
 import { motion } from "motion/react";
 
 type CountItemProps = {
-  top: string | number;
+  time: number;
   bottom: string;
 };
 
-function CountItem({ top, bottom }: CountItemProps) {
+function CountItem({ time, bottom }: CountItemProps) {
   return (
     <div className="p-2 flex flex-col items-center rounded-xl w-full">
       <p style={{ fontFamily: "'Forum', system-ui" }} className="text-5xl">
-        {top}
+        {Math.abs(time)}
       </p>
       <p
         style={{ fontFamily: "'Forum', system-ui" }}
@@ -31,6 +31,38 @@ function CountDown() {
   useEffect(() => {
     setInterval(() => setNow(Date.now() / 1000), 1000);
   }, []);
+
+  function calculateDays() {
+    const days = Math.floor((eventDate - now) / (60 * 60 * 24));
+    if (days < 0) {
+      return days + 1;
+    }
+    return days;
+  }
+
+  function calculateHours() {
+    const hours = Math.floor(((eventDate - now) % (60 * 60 * 24)) / (60 * 60));
+    if (hours < 0) {
+      return hours + 1;
+    }
+    return hours;
+  }
+
+  function calculateMinutes() {
+    const minutes = Math.floor(((eventDate - now) % (60 * 60)) / 60);
+    if (minutes < 0) {
+      return minutes + 1;
+    }
+    return minutes;
+  }
+
+  function calculateSeconds() {
+    const seconds = Math.floor((eventDate - now) % 60);
+    if (seconds < 0) {
+      return seconds + 1;
+    }
+    return seconds;
+  }
 
   return (
     <Section className="bg-[url('assets/photo_4.jpg')] bg-cover bg-center text-white">
@@ -57,24 +89,10 @@ function CountDown() {
               whileInView={{ opacity: 1, transition: { delay: 0.45 } }}
             >
               <div className="grid grid-cols-4 gap-2 mt-4">
-                <CountItem
-                  top={Math.floor((eventDate - now) / (60 * 60 * 24))}
-                  bottom="Days"
-                />
-                <CountItem
-                  top={Math.floor(
-                    ((eventDate - now) % (60 * 60 * 24)) / (60 * 60)
-                  )}
-                  bottom="Hours"
-                />
-                <CountItem
-                  top={Math.floor(((eventDate - now) % (60 * 60)) / 60)}
-                  bottom="Minutes"
-                />
-                <CountItem
-                  top={Math.floor((eventDate - now) % 60)}
-                  bottom="Seconds"
-                />
+                <CountItem time={calculateDays()} bottom="Days" />
+                <CountItem time={calculateHours()} bottom="Hours" />
+                <CountItem time={calculateMinutes()} bottom="Minutes" />
+                <CountItem time={calculateSeconds()} bottom="Seconds" />
               </div>
             </motion.div>
           </div>
